@@ -19,6 +19,11 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   Cla_1 = loadImage('Clarke.png');
   Oti_1 = loadImage('Otis.png')
   firstRun = false}
+  
+  let Hen = map(vocal,0,100,0,4);
+  let Arc = map(drum,0,100,0,4);
+  let Cla = map(other,0,100,0,4);
+  let Oti = map(bass,0,100,0,4);
 
   background(248,146,121)
   
@@ -36,17 +41,11 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   image(img2,0,Shake)
   image(img3,0,Shake - 5)
 
-  let Hen = map(vocal,0,100,1,4)
-  let Arc = map(drum,0,100,1,4)
-  let Cla = map(other,0,100,1,4)
-  let Oti = map(bass,0,100,1,4)
-  image(Hen_1,640,220)
-  image(Oti_1,960,200)
-  image(Arc_1,320,180)
-  image(Cla_1,20,200)
 
-  
-
+  if (Hen < 2){image(Hen_1,640,220)}
+  if (Arc < 2){image(Arc_1,320,180)}
+  if (Oti < 2){image(Oti_1,960,200)}
+  if (Cla < 2){image(Cla_1,20,200)}
 }
 
 
