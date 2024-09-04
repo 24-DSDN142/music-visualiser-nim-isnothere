@@ -2,10 +2,25 @@
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 let img;
 var x = 0
+let firstRun = true
+let Hen = map(vocal,0,100,1,4);
+let Arc = map(drum,0,100,1,4);
+let Cla = map(other,0,100,1,4);
+let Oti = map(bass,0,100,1,4);
+
+
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
+  if (firstRun){
+  img1 = loadImage('MtBack.png');
+  img2 = loadImage('MtMid.png');
+  img3 = loadImage('MtFore.png');
+  Hen_1 = loadImage('Henry.png');
+  Arc_1 = loadImage('Archie.png');
+  Cla_1 = loadImage('Clarke.png');
+  Oti_1 = loadImage('Otis.png')
+  firstRun = false}
 
   background(248,146,121)
-  img = loadImage('MtBack.png');
   
   noStroke()
   SunRays()
@@ -14,9 +29,22 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   ellipse(950,250,EllipseSize,EllipseSize);
   
   fill(215,70,70)
-  rect(0,520,1280,200)
+  rect(0,500,1280,300)
 
-  image(img, 100, 100)
+  let Shake = map(drum,0,100,40,60)
+  image(img1,0,Shake)
+  image(img2,0,Shake)
+  image(img3,0,Shake - 5)
+
+  let Hen = map(vocal,0,100,1,4)
+  let Arc = map(drum,0,100,1,4)
+  let Cla = map(other,0,100,1,4)
+  let Oti = map(bass,0,100,1,4)
+  image(Hen_1,640,220)
+  image(Oti_1,960,200)
+  image(Arc_1,320,180)
+  image(Cla_1,20,200)
+
   
 
 }
