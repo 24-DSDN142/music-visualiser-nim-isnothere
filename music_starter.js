@@ -3,27 +3,28 @@
 let img;
 var x = 0
 let firstRun = true
-let Hen = map(vocal,0,100,1,4);
-let Arc = map(drum,0,100,1,4);
-let Cla = map(other,0,100,1,4);
-let Oti = map(bass,0,100,1,4);
-
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   if (firstRun){
   img1 = loadImage('MtBack.png');
   img2 = loadImage('MtMid.png');
   img3 = loadImage('MtFore.png');
-  Hen_1 = loadImage('Henry.png');
-  Arc_1 = loadImage('Archie.png');
-  Cla_1 = loadImage('Clarke.png');
-  Oti_1 = loadImage('Otis.png')
+  Drums = loadImage('drums.png')
+  Hen_0 = loadImage('Henry_0.png');
+  Hen_1 = loadImage('Henry_1.png');
+  Hen_2 = loadImage('Henry_2.png');
+  Arc_0 = loadImage('Archie_0.png');
+  Arc_1 = loadImage('Archie_1.png')
+  Arc_2 = loadImage('Archie_2.png')
+  Arc_3 = loadImage('Archie_3.png');
+  Cla_0 = loadImage('Clarke_0.png');
+  Cla_1 = loadImage('Clarke_1.png');
+  Cla_2 = loadImage('Clarke_2.png');
+  Oti_0 = loadImage('Otis_0.png')
+  Oti_1 = loadImage('Otis_1.png')
+  Oti_2 = loadImage('Otis_2.png')
   firstRun = false}
   
-  let Hen = map(vocal,0,100,0,4);
-  let Arc = map(drum,0,100,0,4);
-  let Cla = map(other,0,100,0,4);
-  let Oti = map(bass,0,100,0,4);
 
   background(248,146,121)
   
@@ -36,16 +37,38 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   fill(215,70,70)
   rect(0,500,1280,300)
 
-  let Shake = map(drum,0,100,40,60)
+  let Shake = map(other,0,100,40,70)
   image(img1,0,Shake)
   image(img2,0,Shake)
-  image(img3,0,Shake - 5)
+  image(img3,0,Shake - 5);
 
+  let Hen = map(vocal,0,100,0,4);
+  let Arc = map(drum,0,100,0,4);
+  let Cla = map(other,0,100,0,4);
+  let Oti = map(bass,0,100,0,4);
 
-  if (Hen < 2){image(Hen_1,640,220)}
-  if (Arc < 2){image(Arc_1,320,180)}
-  if (Oti < 2){image(Oti_1,960,200)}
-  if (Cla < 2){image(Cla_1,20,200)}
+  //Archie if statements
+  if (counter < 308){image(Arc_0,320,180)}
+  if (Arc < 2){image(Arc_1,200,170)}
+  if (2 <= Arc <= 3){image(Arc_2,200,170)}
+  if (Arc > 3){image(Arc_3,200,170)}
+  image(Drums,0,-20)
+
+  //Otis if statements
+  if (Oti < 2){image(Oti_0,960,200)}
+  if (2 <= Oti <= 3){image(Oti_1,960,200)}
+  if (Oti > 3){image(Oti_2,960,200)}
+
+  //Henry if statements
+  if (Hen < 2){image(Hen_0,640,220)}
+  if (2 <= Hen <= 3){image(Hen_1,640,220)}
+  if (Hen > 3){image(Hen_2,640,220)}
+
+  //Clarke if statements
+  if (Cla < 2){image(Cla_0,20,200)}
+  if (2 <= Cla <= 3){image(Cla_1,20,200)}
+  if (Cla > 3){image(Cla_2,20,200)}
+
 }
 
 
