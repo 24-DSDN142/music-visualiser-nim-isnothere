@@ -15,8 +15,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   Hen_2 = loadImage('Henry_2.png');
   Arc_0 = loadImage('Archie_0.png');
   Arc_1 = loadImage('Archie_1.png')
-  Arc_2 = loadImage('Archie_2.png')
-  Arc_3 = loadImage('Archie_3.png');
+  Arc_2 = loadImage('Archie_3.png');
   Cla_0 = loadImage('Clarke_0.png');
   Cla_1 = loadImage('Clarke_1.png');
   Cla_2 = loadImage('Clarke_2.png');
@@ -46,23 +45,23 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   let Arc = map(drum,0,100,0,4);
   let Cla = map(other,0,100,0,4);
   let Oti = map(bass,0,100,0,4);
+ 
 
   //Archie if statements
-  if (counter < 308){image(Arc_0,320,180)}
-  if (Arc < 2){image(Arc_1,200,170)}
-  if (2 <= Arc <= 3){image(Arc_2,200,170)}
-  if (Arc > 3){image(Arc_3,200,170)}
-  image(Drums,0,-20)
+  if (Arc < 2){image(Arc_0,0,0)}
+  if (2 < Arc < 3){image(Arc_1,0,0)}
+  if (Arc > 3){image(Arc_2,0,0)}
+  image(Drums,0,0)
 
   //Otis if statements
-  if (Oti < 2){image(Oti_0,960,200)}
-  if (2 <= Oti <= 3){image(Oti_1,960,200)}
-  if (Oti > 3){image(Oti_2,960,200)}
+  if (Oti < 2){image(Oti_0,0,0)}
+  if (2 < Oti < 3){image(Oti_1,0,0)}
+  if (Oti > 3){image(Oti_2,0,10)}
 
   //Henry if statements
-  if (Hen < 2){image(Hen_0,640,220)}
-  if (2 <= Hen <= 3){image(Hen_1,640,220)}
-  if (Hen > 3){image(Hen_2,640,220)}
+  if (Hen < 2){image(Hen_0,0,0)}
+  if (2 <= Hen <= 3){image(Hen_1,0,0)}
+  if (Hen > 3){image(Hen_2,0,0)}
 
   //Clarke if statements
   if (Cla < 2){image(Cla_0,20,200)}
