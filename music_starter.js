@@ -9,13 +9,13 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   img1 = loadImage('MtBack.png');
   img2 = loadImage('MtMid.png');
   img3 = loadImage('MtFore.png');
-  Drums = loadImage('drums.png')
+  Drums = loadImage('Drums.png')
   Hen_0 = loadImage('Henry_0.png');
   Hen_1 = loadImage('Henry_1.png');
   Hen_2 = loadImage('Henry_2.png');
   Arc_0 = loadImage('Archie_0.png');
   Arc_1 = loadImage('Archie_1.png')
-  Arc_2 = loadImage('Archie_3.png');
+  Arc_2 = loadImage('Archie_2.png');
   Cla_0 = loadImage('Clarke_0.png');
   Cla_1 = loadImage('Clarke_1.png');
   Cla_2 = loadImage('Clarke_2.png');
@@ -48,25 +48,25 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
  
 
   //Archie if statements
+  if (2 <= Arc <= 3){image(Arc_1,0,0)}
   if (Arc < 2){image(Arc_0,0,0)}
-  if (2 < Arc < 3){image(Arc_1,0,0)}
   if (Arc > 3){image(Arc_2,0,0)}
   image(Drums,0,0)
 
   //Otis if statements
+  if (2 <= Oti <= 3){image(Oti_1,0,0)}
   if (Oti < 2){image(Oti_0,0,0)}
-  if (2 < Oti < 3){image(Oti_1,0,0)}
-  if (Oti > 3){image(Oti_2,0,10)}
+  if (Oti > 3.5){image(Oti_2,0,10)}
 
   //Henry if statements
-  if (Hen < 2){image(Hen_0,0,0)}
-  if (2 <= Hen <= 3){image(Hen_1,0,0)}
-  if (Hen > 3){image(Hen_2,0,0)}
+  if (2 <= Hen <= 3){image(Hen_1,50,0)}
+  if (Hen < 2){image(Hen_0,50,0)}
+  if (Hen > 3.5){image(Hen_2,50,0)}
 
   //Clarke if statements
-  if (Cla < 2){image(Cla_0,20,200)}
-  if (2 <= Cla <= 3){image(Cla_1,20,200)}
-  if (Cla > 3){image(Cla_2,20,200)}
+  if (2 <= Cla <= 3){image(Cla_1,-20,0)}
+  if (Cla < 2){image(Cla_0,-20,0)}
+  if (Cla > 3){image(Cla_2,-20,0)}
 
 }
 
