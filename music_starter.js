@@ -48,25 +48,25 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
  
 
   //Archie if statements
-  if (2 <= Arc <= 3){image(Arc_1,0,0)}
-  if (Arc < 2){image(Arc_0,0,0)}
-  if (Arc > 3){image(Arc_2,0,0)}
-  image(Drums,0,0)
+  if (2 <= Arc && Arc <= 3){image(Arc_1,0+Arc,-30+Arc*3)}
+  if (Arc < 2){image(Arc_0,0+Arc,-30+Arc*3)}
+  if (Arc > 3){image(Arc_2,0+Arc,-30+Arc*3)}
+  image(Drums,0,-30+Arc*5)
 
   //Otis if statements
-  if (2 <= Oti <= 3){image(Oti_1,0,0)}
-  if (Oti < 2){image(Oti_0,0,0)}
-  if (Oti > 3.5){image(Oti_2,0,10)}
+  if (2 <= Oti && Oti <= 3){image(Oti_1,0+Oti,0+Arc*3)}
+  if (Oti < 2){image(Oti_0,0+Oti,0-Arc*3)}
+  if (Oti > 3){image(Oti_2,0+Oti,10-Arc*3)}
 
   //Henry if statements
-  if (2 <= Hen <= 3){image(Hen_1,50,0)}
-  if (Hen < 2){image(Hen_0,50,0)}
-  if (Hen > 3.5){image(Hen_2,50,0)}
+  if (2 <= Hen && Hen <= 3){image(Hen_1,50+Hen,0+Arc*3)}
+  if (Hen < 2){image(Hen_0,50+Hen,0-Arc*3)}
+  if (Hen > 3){image(Hen_2,50+Hen,0-Arc*3)}
 
   //Clarke if statements
-  if (2 <= Cla <= 3){image(Cla_1,-20,0)}
-  if (Cla < 2){image(Cla_0,-20,0)}
-  if (Cla > 3){image(Cla_2,-20,0)}
+  if (2 <= Cla && Cla <= 3){image(Cla_1,-20+Cla,0+Arc*3)}
+  if (Cla < 2){image(Cla_0,-20+Cla,0-Arc*3)}
+  if (Cla > 3){image(Cla_2,-20+Cla,0-Arc*3)}
 
 }
 
@@ -160,38 +160,3 @@ function SunRays(){
   x = x + 0.03
   pop();
 }
-//    let bar_spacing = height / 10;
-//    let bar_height = width / 12;
-//    let bar_pos_x = width / 2;
- //time dependent on counter
-
-//    // vocal bar is red
-//    fill(200, 0, 0);
-//    rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
-//    fill(0);
-//    text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
- 
-//    // drum bar is green
-//    fill(0, 200, 0);
-//    rect(bar_pos_x, height / 2 + 2 * bar_spacing, 4 * drum, bar_height);
-//    fill(0);
-//    text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
- 
-//    // bass bar is blue
-//    fill(50, 50, 240);
-//    rect(bar_pos_x, height / 2 + 3 * bar_spacing, 4 * bass, bar_height);
-//    fill(0);
-//    text("bass", bar_pos_x, height / 2 + 3 * bar_spacing + 8);
- 
-//    // other bar is white
-//    fill(200, 200, 200);
-//    rect(bar_pos_x, height / 2 + 4 * bar_spacing, 4 * other, bar_height);
-//    fill(0);
-//    text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
-//    fill(255, 255, 0);
- 
-//    // display "words"
-//    textAlign(CENTER);
-//    textSize(vocal);
-//    text(words, width/2, height/3);
-// 
